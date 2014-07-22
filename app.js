@@ -6,4 +6,9 @@ app.get('/', function(req, res){
   res.render('index.ejs');
 });
 
+app.get('/search', function(req, res){
+  var query = req.query.searchTerm;
+  res.send("search page: " + query);
+});
+
 app.listen(3000);
