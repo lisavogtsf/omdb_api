@@ -1,4 +1,5 @@
-var express = require("express");
+var express = require("express")
+  request = require('request');
 
 var app = express();
 
@@ -7,8 +8,12 @@ app.get('/', function(req, res){
 });
 
 app.get('/search', function(req, res){
+  // res.send("search page: " + query);
   var query = req.query.searchTerm;
-  res.send("search page: " + query);
+  var searchURL = "http://www.omdbapi.com/?s=" + query;
+  request(searchURL, function(error, response, body){
+    res.send ("response received");
+  })
 });
 
 app.listen(3000);
