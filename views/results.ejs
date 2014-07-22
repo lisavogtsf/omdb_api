@@ -4,6 +4,11 @@
     <title>Movie Search Results</title>
   </head>
   <body>
-    Replace me with a list of movies
+    <ul>
+      <!-- passed {movieList: body} -->
+      <% movieList.forEach(function(movie){ %>
+      <li> <%= movie.Title %> </li>
+      <%  }) %>
+    </ul>
   </body>
 </html>
